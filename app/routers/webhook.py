@@ -17,3 +17,13 @@ async def new_user_handler(request: Request):
         data = {}
     print(json.dumps(data, ensure_ascii=False, indent=2))
     return {"message": "Webhook received"}
+
+
+@router.post("/payment")
+async def payment_handler(request: Request):
+    try:
+        data = await request.json()
+    except:
+        data = {}
+    print(json.dumps(data, ensure_ascii=False, indent=2))
+    return {"message": "Webhook received"}

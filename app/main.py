@@ -31,7 +31,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(webhook.router, prefix="/auth", tags=["webhook"])
+app.include_router(webhook.router)
 
 
 @app.get("/health")
